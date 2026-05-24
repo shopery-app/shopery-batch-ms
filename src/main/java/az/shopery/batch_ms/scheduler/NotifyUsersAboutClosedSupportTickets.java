@@ -1,5 +1,9 @@
 package az.shopery.batch_ms.scheduler;
 
+import az.shopery.batch_ms.kafka.producer.NotificationProducer;
+import az.shopery.batch_ms.model.entity.task.SupportTicketEntity;
+import az.shopery.batch_ms.model.event.NotificationEvent;
+import az.shopery.batch_ms.repository.TaskRepository;
 import az.shopery.batch_ms.utils.enums.NotificationType;
 import az.shopery.batch_ms.utils.enums.TicketStatus;
 import jakarta.transaction.Transactional;
