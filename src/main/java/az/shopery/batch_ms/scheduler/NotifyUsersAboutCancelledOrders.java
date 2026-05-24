@@ -23,7 +23,7 @@ public class NotifyUsersAboutCancelledOrders {
     private final NotificationProducer notificationProducer;
 
     @Transactional
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "0 0 * * * *")
     public void notifyUsersAboutCancelledOrders() {
         List<OrderEntity> orders = orderRepository.findAllByStatusAndIsUserNotifiedFalse(OrderStatus.CANCELLED);
         for (OrderEntity order : orders) {
