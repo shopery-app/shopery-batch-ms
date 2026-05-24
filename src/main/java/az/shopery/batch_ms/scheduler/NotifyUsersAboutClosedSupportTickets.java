@@ -22,7 +22,7 @@ public class NotifyUsersAboutClosedSupportTickets {
     private final TaskRepository taskRepository;
     private final NotificationProducer notificationProducer;
 
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "0 0 * * * *")
     @Transactional
     public void notifyUsersAboutClosedSupportTickets() {
         List<SupportTicketEntity> tickets = taskRepository.findAllByTicketStatusAndIsUserNotifiedFalse(TicketStatus.CLOSED);
